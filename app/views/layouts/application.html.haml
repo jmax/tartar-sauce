@@ -1,0 +1,26 @@
+!!! Strict
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    %title
+      TartarSauce!
+    = stylesheet_link_tag 'reset-fonts-grids', 'application'
+    = javascript_include_tag :defaults
+  %body
+    #doc3.yui-t5
+      #hd{ :role => "banner" }
+        = render :partial => 'shared/user_nav_bar'
+        %h1 TartarSauce!
+
+      #bd{ :role => "main" }
+        #yui-main
+          .yui-b
+            .yui-g.workspace
+              %p{ :style => "color: green" }
+                = flash[:notice]
+              = yield
+        .yui-b.sidebar
+          = yield :sidebar
+      #ft{ :role => "contentinfo" }
+        %p
+          2010. INSIGNIA.

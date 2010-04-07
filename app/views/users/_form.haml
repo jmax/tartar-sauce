@@ -1,0 +1,19 @@
+.field
+  = form.label :full_name
+  = form.text_field :full_name
+
+.field
+  = form.label :email
+  = form.text_field :email
+
+.field
+  = form.label :login
+  = form.text_field :login
+
+.field
+  = form.label :password, form.object.new_record? ? nil : "Change password"
+  = form.password_field :password
+
+.field
+  = form.label :password_confirmation
+  = form.password_field :password_confirmation

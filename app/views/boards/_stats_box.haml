@@ -1,0 +1,7 @@
+%h3 Stats
+%p
+  Pending items:
+  = @board.items.pending.count(:id)
+%p
+  Completed items:
+  = @board.items.completed.count(:id)

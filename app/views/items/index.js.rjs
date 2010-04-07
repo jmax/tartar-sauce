@@ -1,0 +1,5 @@
+page.replace_html "item-list", :partial => 'items/list',
+                  :locals => {
+                    :items_set => @items,
+                    :editable => params[:completed] ? false : true
+                  }

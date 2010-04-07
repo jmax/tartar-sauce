@@ -1,0 +1,23 @@
+%h3= @board.name
+.description= @board.description
+
+.items
+  .filters
+    = render :partial => 'items/filters'
+  #item-list.list
+    = render :partial => 'items/list', :locals => {:items_set => @board.items.pending, :editable => true}
+  #item-form
+    = render :partial => 'items/new_form', :locals => {:item => @board.items.build}
+
+
+- content_for :sidebar do
+  #stats-box.box
+    = render :partial => 'stats_box'
+  .box
+    %h3 More boards
+    %ul
+      - for board in @current_user.boards.without(@board.id)
+        %li
+          = link_to board.name, board
+    .new-one
+      = link_to 'Add a new board', new_board_path

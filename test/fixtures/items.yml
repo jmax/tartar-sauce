@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  board: 
+  description: MyText
+  needed_asap: false
+  completed: false
+
+two:
+  board: 
+  description: MyText
+  needed_asap: false
+  completed: false

@@ -1,0 +1,11 @@
+%h3 Dashboard
+
+.box
+  - if @boards.empty?
+    .empty-set
+      No active boards?
+      = link_to 'Create one now', new_board_path
+  - else
+    %p= link_to 'Add a new board', new_board_path
+    .boards
+      = render @boards

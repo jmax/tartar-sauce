@@ -1,0 +1,13 @@
+%h1 Create a new Board
+
+- form_for @board do |f|
+  = f.error_messages
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :description
+    %br/
+    = f.text_area :description
+  = f.submit :save

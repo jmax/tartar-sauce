@@ -1,0 +1,4 @@
+if @item.completed?
+  page.replace_html "item-list", :partial => 'items/list', :locals => {:items_set => @board.items.pending, :editable => true}
+  page.replace_html "stats-box", :partial => 'boards/stats_box'
+end

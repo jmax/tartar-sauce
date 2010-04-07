@@ -1,0 +1,2 @@
+page.visual_effect :fade, dom_id(@item)
+page.replace_html "stats-box", :partial => 'boards/stats_box'

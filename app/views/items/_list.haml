@@ -1,0 +1,12 @@
+%ul
+  - for item in items_set
+    %li[item]
+      .actions
+        = link_to_remote 'Delete', :url => [@board, item], :method => :delete, :confirm => 'Are you sure?'
+      - if editable
+        %span
+          = check_box_tag dom_id(item, 'completed'), "1" , item.completed?
+          = observe_field dom_id(item, 'completed'), :url => [:complete, @board, item], :method => :put
+      - if item.needed_asap?
+        %span.asap asap!
+      = item.description

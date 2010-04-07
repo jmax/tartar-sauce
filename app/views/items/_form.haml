@@ -1,0 +1,9 @@
+= f.error_messages
+.field
+  = f.label :description
+  %br/
+  = f.text_area :description
+.field
+  = f.check_box :needed_asap
+  = f.label :needed_asap
+= f.submit "Add this item", :class => 'pretty-submit'
