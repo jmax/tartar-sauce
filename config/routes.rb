@@ -1,15 +1,19 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resource  :user_session
-  map.login     'login',  :controller => 'user_sessions', :action => 'new'
-  map.logout    'logout', :controller => 'user_sessions', :action => 'destroy'
+TartarSauce::Application.routes.draw do
+  # Authentication System
+  resource  :account
+  resource  :user_session
+  resources :users
+  match     'login'  => 'user_sessions#new',     :as => :login
+  match     'logout' => 'user_sessions#destroy', :as => :logout
+  match     'join'   => 'users#new',             :as => :join
 
-  map.resource  :account, :controller => "users"
-  map.resources :users
-  map.join      'join',   :controller => 'users',         :action => 'new'
-
-  map.resource  :dashboard, :only => :show
-
-  map.resources :boards, :only => [:new, :create, :show] do |board|
-    board.resources :items, :only => [:index, :create, :destroy], :member => {:complete => :put}
+  # Frontend rewrites
+  resource  :dashboard
+  resources :boards do
+      resources :items do
+      member do
+        put :complete
+      end
+    end
   end
 end

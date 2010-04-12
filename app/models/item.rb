@@ -3,8 +3,8 @@ class Item < ActiveRecord::Base
 
   validates_presence_of :description, :board
 
-  named_scope :completed, {:conditions => { :completed => true }}
-  named_scope :pending,   {:conditions => { :completed => false }}
+  scope :completed, where(:completed => true)
+  scope :pending,   where(:completed => false)
 
   def complete!
     transaction do

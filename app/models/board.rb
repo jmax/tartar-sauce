@@ -6,6 +6,6 @@ class Board < ActiveRecord::Base
 
   has_friendly_id :name, :use_slug => true
 
-  default_scope :conditions => {:archived => false}, :order => 'created_at DESC'
-  named_scope   :without, lambda { |some_id| {:conditions => ['id <> ?', some_id]} }
+#  default_scope :conditions => {:archived => false}, :order => 'created_at DESC'
+  scope         :without, lambda { |some_id| where('id != ?', some_id) }
 end

@@ -1,13 +1,4 @@
-*._*
-.DS_Store
-config/database.yml
-coverage
+.bundle
 db/*.sqlite3
-db/**/*.db
-db/schema.rb
-doc/api
-doc/app
-log/*
-nbproject
-public/system/**/*
+log/*.log
 tmp/**/*
