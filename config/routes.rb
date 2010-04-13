@@ -1,11 +1,10 @@
 TartarSauce::Application.routes.draw do
+  root :to => "dashboards#show"
+
   # Authentication System
-  resource  :account
-  resource  :user_session
-  resources :users
-  match     'login'  => 'user_sessions#new',     :as => :login
-  match     'logout' => 'user_sessions#destroy', :as => :logout
-  match     'join'   => 'users#new',             :as => :join
+  devise_for :users, :path_names => {
+    :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'
+  }
 
   # Frontend rewrites
   resource  :dashboard
@@ -17,3 +16,4 @@ TartarSauce::Application.routes.draw do
     end
   end
 end
+
