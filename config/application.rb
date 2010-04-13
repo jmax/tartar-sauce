@@ -39,5 +39,7 @@ module TartarSauce
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters << :password
+    config.cookie_secret = 'ca502d2b1e6cca7ca2b4fe10f1232bf1708647f9939715492c7f65b2625e8f69fee95760965d155b053a4fac04bba08ac85adc794312a846cbffb2d4aa12970e'
   end
 end
+
