@@ -1,5 +1,6 @@
 class ItemsController < InheritedResources::Base
-  before_filter :require_user
+  before_filter :authenticate_user!
+
   belongs_to    :board
   actions       :index, :create, :destroy
   respond_to    :js
@@ -14,3 +15,4 @@ class ItemsController < InheritedResources::Base
     end
   end
 end
+

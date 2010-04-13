@@ -1,7 +1,8 @@
 class DashboardsController < ApplicationController
-  before_filter :require_user
+  before_filter :authenticate_user!
 
   def show
-    @boards = @current_user.boards
+    @boards = current_user.boards
   end
 end
+
