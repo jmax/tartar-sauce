@@ -1,4 +1,5 @@
 View:
-= link_to_remote 'Pending', :url => board_items_path(@board, :pending => true), :method => :get
+= link_to 'Pending',   board_items_path(@board, :pending => true),   :method => :get, :remote => true
 |
-= link_to_remote 'Completed', :url => board_items_path(@board, :completed => true), :method => :get
+= link_to 'Completed', board_items_path(@board, :completed => true), :method => :get, :remote => true
+

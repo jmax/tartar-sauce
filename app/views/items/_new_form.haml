@@ -1,2 +1,3 @@
-- remote_form_for [@board, item] do |f|
+- form_for [@board, item], :remote => true do |f|
   = render :partial => 'items/form', :locals => {:f => f}
+
