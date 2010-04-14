@@ -1,6 +1,0 @@
-authlogic  --version "= 2.1.2"
-has_scope  --version "= 0.5.0"
-responders --version "= 0.4.7"
-inherited_resources  --version "= 1.0.6"
-haml --version "=2.2.22"
-friendly_id --version "~> 2.3"
